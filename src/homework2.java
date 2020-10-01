@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class homework2 {
 
     public static void main(String[] args){
@@ -10,6 +12,10 @@ public class homework2 {
 
         int[] arr = {2, 2, 2, 1, 2, 2, 10, 1 };
         System.out.println(checkBalance(arr));
+
+        int[] arr1 = { 1, 2, 3 };
+        moveArray(arr1, -1);
+        System.out.println(Arrays.toString(arr1));
     }
 
     static void changeNumbers(){
@@ -129,12 +135,26 @@ public class homework2 {
 
     }
 
-   /* static void moveArray(int[] arr, int n){
-        int a;
+    static void moveArray(int[] arr, int n) {
+        int buf;
 
-        for (int i = 0; i < arr.length; i++){
-            a = arr[i+n];
-            arr[i+n] = arr[i];
+        if ( n > 0) {
+            for (int i = 0; i < n; i++) {
+                buf = arr[arr.length - 1];
+                for (int j = arr.length - 1; j > 0; j--) {
+                    arr[j] = arr[j - 1];
+                }
+                arr[0] = buf;
+            }
         }
-    }*/
+        else if ( n < 0) {
+            for ( int i = arr.length; i > n; i++) {
+                buf = arr[arr.length - 1];
+                for (int j = arr.length - 1; j > 0; j--) {
+                    arr[j] = arr[j - 1];
+                }
+                arr[0] = buf;
+            }
+        }
+    }
 }
