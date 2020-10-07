@@ -3,7 +3,7 @@ package ru.gb.homework;
 import java.util.Random;
 import java.util.Scanner;
 
-public class homework4 {
+public class Main {
 
     static char[][] map;
     static final int SIZE = 5;
